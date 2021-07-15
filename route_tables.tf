@@ -14,7 +14,6 @@ resource "aws_route_table" "public" {
     gateway_id = aws_internet_gateway.demo-igw.id
   }
 
-  # A map of tags to assign to the resource.
   tags = {
     Name = "Public Route"
   }
@@ -32,7 +31,6 @@ resource "aws_route_table" "private1" {
     nat_gateway_id = aws_nat_gateway.gw1.id
   }
 
-  # A map of tags to assign to the resource.
   tags = {
     Name = "Private Route 1a"
   }
@@ -50,7 +48,6 @@ resource "aws_route_table" "private2" {
     nat_gateway_id = aws_nat_gateway.gw2.id
   }
 
-  # A map of tags to assign to the resource.
   tags = {
     Name = "Private Route 1b"
   }
