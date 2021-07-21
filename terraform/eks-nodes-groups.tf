@@ -70,6 +70,8 @@ resource "aws_eks_node_group" "nodes_general" {
   # These subnets must have the following resource tag: kubernetes.io/cluster/CLUSTER_NAME 
   # (where CLUSTER_NAME is replaced with the name of the EKS Cluster).
   subnet_ids = [
+    aws_subnet.public_1.id,
+    aws_subnet.public_2.id,
     aws_subnet.private_1.id,
     aws_subnet.private_2.id
   ]
