@@ -66,8 +66,7 @@ resource "aws_instance" "sample_instance" {
   vpc_security_group_ids = ["${aws_security_group.sample_sg.id}"]
   subnet_id = data.aws_subnet.subnet_var.id
 
-  user_data = file("scripts/install_apache.sh")
-  #user_data = "${data.template_file.init.rendered}"
+  user_data = data.template_file.init.rendered
 
   root_block_device {
     volume_type = "gp2"

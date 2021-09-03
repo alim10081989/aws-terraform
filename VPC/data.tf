@@ -11,9 +11,9 @@ data "aws_subnet" "subnet_var" {
   }
 }
 
-#data "template_file" "init" {
-#  template = "${file("${path.module}/templates/user_data.sh.tpl")}"
-#  vars = {
-#    some_address = "${aws_instance.sample_instance.private_ip}"
-#  }
-#}
+data "template_file" "init" {
+  template = "${file("templates/user_data.sh.tpl")}"
+  vars = {
+    some_address = "${aws_instance.sample_instance.private_ip}"
+  }
+}
