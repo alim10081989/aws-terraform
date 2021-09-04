@@ -71,7 +71,6 @@ resource "aws_instance" "sample_instance" {
   root_block_device {
     volume_type = "gp2"
     volume_size = 10
-    iops = 100
     encrypted = false
   }
 
